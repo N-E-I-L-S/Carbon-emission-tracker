@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FilledInfoCard from "./Cards/FilledInfoCard";
-
+import FilledInfoCard from "../Cards/FilledInfoCard";
 
 function FoodAndCloth() {
   const [foodAndClothData, setFoodAndClothData] = useState({
@@ -46,117 +45,110 @@ function FoodAndCloth() {
 
   return (
     <div className="container mx-auto">
-      <div className="text-center mt-10 mb-10">
-        <h1 className="text-3xl">Food & Clothing</h1>
+      <div className="text-center text-2xl font-semibold pt-20 fontColor">
+        <h1 variant="h1">FOOD & CLOTHING</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="col-span-1">
+      <div className="flex flex-wrap justify-center gap-4 pt-10">
+        <div className="w-full md:w-1/2 lg:w-1/3 mr-4">
           <FilledInfoCard
             variant="gradient"
             color="success"
-            //icon={<FontAwesomeIcon icon={faCow} />}
             title="Dairy"
             description=""
             action={{
               func: (value) => handleChange("dairy", value),
               funcT: (value) => handleTempChange("Dairy", value),
-              unit: "usd",
+              unit: "inr",
               value: foodAndClothData.tempDairy,
             }}
           />
         </div>
-        <div className="col-span-1">
+        <div className="w-full md:w-1/2 lg:w-1/3">
           <FilledInfoCard
             variant="gradient"
             color="success"
-            //icon={<KebabDiningIcon />}
             title="Meat"
             description=""
             action={{
               func: (value) => handleChange("meat", value),
               funcT: (value) => handleTempChange("Meat", value),
-              unit: "usd",
+              unit: "inr",
               value: foodAndClothData.tempMeat,
             }}
           />
         </div>
-        <div className="col-span-1">
+        <div className="w-full md:w-1/2 lg:w-1/3 mr-4">
           <FilledInfoCard
             variant="gradient"
             color="success"
-            //icon={<FontAwesomeIcon icon={faCarrot} />}
             title="Fruit & Veg"
             description=""
             action={{
               func: (value) => handleChange("fruitAndVeg", value),
               funcT: (value) => handleTempChange("FruitAndVeg", value),
-              unit: "usd",
+              unit: "inr",
               value: foodAndClothData.tempFruitAndVeg,
             }}
           />
         </div>
-        <div className="col-span-1">
+        <div className="w-full md:w-1/2 lg:w-1/3">
           <FilledInfoCard
             variant="gradient"
             color="success"
-            //icon={<FontAwesomeIcon icon={faWineBottle} />}
             title="Wine"
             description=""
             action={{
               func: (value) => handleChange("wine", value),
               funcT: (value) => handleTempChange("Wine", value),
-              unit: "usd",
+              unit: "inr",
               value: foodAndClothData.tempWine,
             }}
           />
         </div>
-        <div className="col-span-1">
+        <div className="w-full md:w-1/2 lg:w-1/3 mr-4">
           <FilledInfoCard
             variant="gradient"
             color="success"
-            //icon={<FontAwesomeIcon icon={faBowlRice} />}
             title="Other Food"
             description=""
             action={{
               func: (value) => handleChange("other", value),
               funcT: (value) => handleTempChange("Other", value),
-              unit: "usd",
+              unit: "inr",
               value: foodAndClothData.tempOther,
             }}
           />
         </div>
-        <div className="col-span-1">
+        <div className="w-full md:w-1/2 lg:w-1/3">
           <FilledInfoCard
             variant="gradient"
             color="success"
-            //icon={<FontAwesomeIcon icon={faShirt} />}
             title="Clothing"
             description=""
             action={{
               func: (value) => handleChange("clothing", value),
               funcT: (value) => handleTempChange("Clothing", value),
-              unit: "usd",
+              unit: "inr",
               value: foodAndClothData.tempClothing,
             }}
           />
         </div>
       </div>
       <div className="flex justify-center mt-5">
-          <button
-            className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600"
-            onClick={() => {
-                localStorage.setItem("dairy", foodAndClothData.dairy);
-                localStorage.setItem("meat", foodAndClothData.meat);
-                localStorage.setItem("fruitAndVeg", foodAndClothData.fruitAndVeg);
-                localStorage.setItem("wine", foodAndClothData.wine);
-                localStorage.setItem("other", foodAndClothData.other);
-                localStorage.setItem("clothing", foodAndClothData.clothing);
-                window.location.href = "/restaurantAndAccommodation";
-              }}
-            >
-            Next: Restaurant & Accommodation
-          </button>
-        </div>
+        <button
+          className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none dark:focus:ring-green-800"
+          onClick={() => {
+            localStorage.setItem("dairy", foodAndClothData.dairy);
+            localStorage.setItem("meat", foodAndClothData.meat);
+            localStorage.setItem("fruitAndVeg", foodAndClothData.fruitAndVeg);
+            localStorage.setItem("wine", foodAndClothData.wine);
+            localStorage.setItem("other", foodAndClothData.other);
+            localStorage.setItem("clothing", foodAndClothData.clothing);
+          }}
+        >
+          Save
+        </button>
+      </div>
     </div>
   );
 }

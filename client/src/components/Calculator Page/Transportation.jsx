@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import FilledInfoCard from "./Cards/FilledInfoCard";
+import FilledInfoCard from "../Cards/FilledInfoCard";
+import Navbar from "../Landing Page/Navbar";
 
 class Transportation extends Component {
   constructor(props) {
@@ -88,14 +89,23 @@ class Transportation extends Component {
     this.setState({ tempIntercityTrain: value });
   };
 
+  backgroundStyle = {
+    backgroundImage: `url(https://springpack.co.uk/app/uploads/2021/11/still-life-sustainable-lifestyle-elements-composition-scaled.jpg)`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed", // Optional, to fix the background
+  };
+
   render() {
     return (
       <>
-          <div className="container mx-auto">
-            <div className="text-center mt-10 mb-10">
-              <h3 variant="h1">Transportation</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Navbar />
+        <div className="container mx-auto pt-10">
+          <div className="text-center text-2xl font-semibold pt-20 fontColor">
+            <h3 variant="h1">TRANSPORTATION</h3>
+          </div>
+          <div className="pt-10 flex flex-wrap justify-center gap-10">
+            <div className="w-full md:w-1/2 lg:w-1/3">
               <FilledInfoCard
                 variant="gradient"
                 color="info"
@@ -105,10 +115,12 @@ class Transportation extends Component {
                 action={{
                   func: this.changeCar,
                   funcT: this.changeTempCar,
-                  unit: "miles",
+                  unit: "km",
                   value: this.state.tempCar,
                 }}
               />
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/3">
               <FilledInfoCard
                 variant="gradient"
                 color="success"
@@ -118,67 +130,60 @@ class Transportation extends Component {
                 action={{
                   func: this.changeBus,
                   funcT: this.changeTempBus,
-                  unit: "miles",
+                  unit: "km",
                   value: this.state.tempBus,
                 }}
               />
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/3">
               <FilledInfoCard
                 variant="gradient"
                 color="success"
                 //icon={<FontAwesomeIcon icon={faSubway} />}
-                title="Subway"
+                title="Metro"
                 description=""
                 action={{
                   func: this.changeSubway,
                   funcT: this.changeTempSubway,
-                  unit: "miles",
+                  unit: "km",
                   value: this.state.tempSubway,
                 }}
               />
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/3">
               <FilledInfoCard
                 variant="gradient"
                 color="success"
                 //icon={<FontAwesomeIcon icon={faPlane} />}
-                title="Airplane"
+                title="Local"
                 description=" "
                 action={{
                   func: this.changeAirplane,
                   funcT: this.changeTempAirplane,
-                  unit: "miles",
+                  unit: "km",
                   value: this.state.tempAirplane,
                 }}
               />
-              <FilledInfoCard
-                variant="gradient"
-                color="success"
-                //icon={<FontAwesomeIcon icon={faTrain} />}
-                title="Intercity Train"
-                description=""
-                action={{
-                  func: this.changeIntercityTrain,
-                  funcT: this.changeTempIntercityTrain,
-                  unit: "miles",
-                  value: this.state.tempIntercityTrain,
-                }}
-              />
-            </div>
-            <div className="flex justify-center mt-5">
-                <button
-                className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600"
-                onClick={() => {
-                    localStorage.setItem("car", this.state.car);
-                    localStorage.setItem("bus", this.state.bus);
-                    localStorage.setItem("subway", this.state.subway);
-                    localStorage.setItem("airplane", this.state.airplane);
-                    localStorage.setItem("intercityTrain", this.state.intercityTrain);
-                    window.location.href = "/utilities";
-                }}
-                >
-                Next: Transportation
-                </button>
             </div>
           </div>
-
+          <div className="flex justify-center mt-5">
+            <button
+              className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none dark:focus:ring-green-800"
+              onClick={() => {
+                localStorage.setItem("car", this.state.car);
+                localStorage.setItem("bus", this.state.bus);
+                localStorage.setItem("subway", this.state.subway);
+                localStorage.setItem("airplane", this.state.airplane);
+                localStorage.setItem(
+                  "intercityTrain",
+                  this.state.intercityTrain
+                );
+              }}
+            >
+              Save
+            </button>
+          </div>
+        </div>
       </>
     );
   }
