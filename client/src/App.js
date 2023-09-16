@@ -9,6 +9,7 @@ import RestaurantAndAccommodation from './components/RestaurantAndAccommodation'
 import Result from './components/Result';
 import Forum from './pages/Forum';
 import Ranking from './pages/Ranking';
+import Visualize from './pages/Visualize';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path='/result' element={<Result/>}/>
       <Route path = "/forum" element={<Forum/>}/>
       <Route path = "/rank" element={<Ranking/>}/>
+      <Route path = "/visual" element={<Visualize/>}/>
     </Routes>
    </Router>
     </>
