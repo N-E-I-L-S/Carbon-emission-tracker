@@ -14,6 +14,7 @@ app.use(bodyParser.json())
 app.use(express.json())
 
 app.use('/', require('./controllers/controller'));
+app.use('/forum', require('./controllers/forumcontroller'));
 
 app.get('/', (req, res)=>{
     res.send("Working!");

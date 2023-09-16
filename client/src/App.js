@@ -7,6 +7,8 @@ import Utilities from './components/Utilities';
 import FoodAndCloth from './components/FoodAndCloth';
 import RestaurantAndAccommodation from './components/RestaurantAndAccommodation';
 import Result from './components/Result';
+import Forum from './pages/Forum';
+import Ranking from './pages/Ranking';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Route path='/foodAndCloth' element={<FoodAndCloth/>}/>
       <Route path='/restaurantAndAccommodation' element={<RestaurantAndAccommodation/>}/>
       <Route path='/result' element={<Result/>}/>
+      <Route path = "/forum" element={<Forum/>}/>
+      <Route path = "/rank" element={<Ranking/>}/>
     </Routes>
    </Router>
     </>

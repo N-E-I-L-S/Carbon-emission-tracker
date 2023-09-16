@@ -4,6 +4,30 @@ import { NavLink, Navigate, useNavigate } from 'react-router-dom'
 
 
 export default function LoginPage() {
+
+    async function addUser(){
+        const body = {
+            username: uname
+        }
+        const url = `http://localhost:3001/api/adduser`
+        try{
+        const response = await fetch(url, {
+        method: 'POST',
+          headers: {
+           'Content-Type': 'application/json',
+         },
+          body: body,
+          });
+        if(response)
+        console.log("User Added")
+        else
+        console.log('error')
+        }
+        catch{
+            console.log('error')
+          }
+    }
+
     const { user, login } = UserAuth()
     const uname = useRef();
     const pwd = useRef();
@@ -16,6 +40,7 @@ export default function LoginPage() {
             console.log(email);
             setLogged(false);
             setLogged1(true);
+            addUser();
             navigate("/home")
         } catch (err) {
             console.log(err);
