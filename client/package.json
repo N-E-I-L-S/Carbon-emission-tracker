@@ -13,12 +13,16 @@
     "chartjs": "^0.3.24",
     "dotenv": "^16.3.1",
     "firebase": "^10.4.0",
-    "nivo": "^0.31.0",
+    "gradio": "^0.1.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
+    "react-tableau": "^0.9.0",
+    "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0",
+    "tableau-api": "^2.2.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -46,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@gradio/client": "^0.3.1",
     "tailwindcss": "^3.3.3"
   }
 }

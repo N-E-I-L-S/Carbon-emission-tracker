@@ -1,12 +1,14 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import LoginPage from './pages/Login';
 import Navbar from './components/Navbar';
-import Period from './components/Period';
-import Transportation from './components/Transportation';
-import Utilities from './components/Utilities';
-import FoodAndCloth from './components/FoodAndCloth';
-import RestaurantAndAccommodation from './components/RestaurantAndAccommodation';
-import Result from './components/Result';
+import Period from './components/Calculator Page/Period';
+import Result from './components/Calculator Page/Result';
+import LandingPage from './pages/LandingPage';
+import Calculator from './pages/Calculator';
+import ResultPage from './pages/ResultPage';
+import ChatBot from './pages/Chatbot';
+import TableauViz from './pages/Dashboard';
+import SetGoals from './components/Calculator Page/SetGoals';
 import Forum from './pages/Forum';
 import Ranking from './pages/Ranking';
 import Visualize from './pages/Visualize';
@@ -18,15 +20,14 @@ function App() {
       <Navbar/>
     <Routes>
       <Route path='/login' element={<LoginPage/>}/>
-      <Route path='/period' element={<Period/>}/>
-      <Route path='/transportation' element={<Transportation/>}/>
-      <Route path='/utilities' element={<Utilities/>}/>
-      <Route path='/foodAndCloth' element={<FoodAndCloth/>}/>
-      <Route path='/restaurantAndAccommodation' element={<RestaurantAndAccommodation/>}/>
-      <Route path='/result' element={<Result/>}/>
-      <Route path = "/forum" element={<Forum/>}/>
-      <Route path = "/rank" element={<Ranking/>}/>
-      <Route path = "/visual" element={<Visualize/>}/>
+      <Route path='/calculate' element={<Period/>}/>
+      <Route path='/fill-details' element={<Calculator/>}/>
+      <Route path='/result' element={<ResultPage/>}/>
+      <Route path='/home' element={<LandingPage/>}/>
+      <Route path='/chat' element={<ChatBot/>}/>
+      <Route path='/dashboard' element={<TableauViz/>}/>
+      <Route path='/set-goals' element={<SetGoals/>}/>
+
     </Routes>
    </Router>
     </>

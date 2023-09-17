@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FilledInfoCard from "./Cards/FilledInfoCard";
+import FilledInfoCard from "../Cards/FilledInfoCard";
 
 class RestaurantAndAccommodation extends Component {
   constructor(props) {
@@ -40,31 +40,29 @@ class RestaurantAndAccommodation extends Component {
 
   render() {
     return (
-      <div className="container mx-auto">
-        <div className="text-center mt-10 mb-10">
-          <h1 className="text-3xl">Restaurant & Accommodation</h1>
+      <div className="container mx-auto pt-10">
+        <div className="text-center text-2xl font-semibold pt-20 fontColor">
+          <h1 variant="h1">RESTAURANT & ACCOMMODATIONS</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          <div className="col-span-1">
+        <div className="flex justify-center gap-4 pt-10">
+          <div>
             <FilledInfoCard
               variant="gradient"
               color="success"
-              // icon={<FontAwesomeIcon icon={faUtensils} />}
               title="Restaurant"
               description=""
               action={{
                 func: this.changeRestaurant,
                 funcT: this.changeTempRestaurant,
-                unit: "usd",
+                unit: "inr",
                 value: this.state.tempRestaurant,
               }}
             />
           </div>
-          <div className="col-span-1">
+          <div>
             <FilledInfoCard
               variant="gradient"
               color="success"
-              // icon={<FontAwesomeIcon icon={faHotel} />}
               title="Hotel"
               description=""
               action={{
@@ -76,17 +74,17 @@ class RestaurantAndAccommodation extends Component {
             />
           </div>
         </div>
-        <div className="flex justify-center mt-5">
+        <div className="flex justify-center mt-10">
           <button
-            className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600"
+            className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none dark:focus:ring-green-800"
             onClick={() => {
-                localStorage.setItem("restaurant", this.state.restaurant);
-                localStorage.setItem("hotel", this.state.hotel);
+              localStorage.setItem("restaurant", this.state.restaurant);
+              localStorage.setItem("hotel", this.state.hotel);
 
-                window.location.href = "/result";
-              }}
-            >
-            Submit & View Total carbon footprint
+              window.location.href = "/result";
+            }}
+          >
+            SUBMIT
           </button>
         </div>
       </div>
