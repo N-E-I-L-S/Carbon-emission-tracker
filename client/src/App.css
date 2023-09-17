@@ -13,6 +13,11 @@
   }
 }
 
+.bump-up:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,15 +33,16 @@
   color: #61dafb;
 }
 
-.fontColor{
-  color : rgb(52, 71, 103);
-  
+.fontColor {
+  color: rgb(52, 71, 103);
+
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

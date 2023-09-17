@@ -183,9 +183,12 @@ class Result extends Component {
         console.log(value)
     }
 
-    render() {
+    render()
+    {
+        const {user} = this.props
         const { resultArray } = this.state
         const { loaded } = this.state
+        console.log(user)
         if (!loaded)
             return (
                 <>

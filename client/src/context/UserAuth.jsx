@@ -8,6 +8,7 @@ import {
     sendPasswordResetEmail,
     confirmPasswordReset,
 } from "firebase/auth";
+import Result from '../components/Result';
 
 const UserContext = createContext();
 export function UserProvider({ children }) {
@@ -53,9 +54,12 @@ export function UserProvider({ children }) {
     }, []);
 
     return (
+        <>
         <UserContext.Provider value={{ user, setUser, login, signup, logout, passwordReset, confirmPasswordReset }}>
             {children}
         </UserContext.Provider>
+        <Result user={user}/>
+        </>
     )
 }
 function UserAuth() {

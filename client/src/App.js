@@ -12,6 +12,7 @@ import SetGoals from './components/Calculator Page/SetGoals';
 import Forum from './pages/Forum';
 import Ranking from './pages/Ranking';
 import Visualize from './pages/Visualize';
+import TableauEmbed from './pages/Tableau';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       <Route path='/chat' element={<ChatBot/>}/>
       <Route path='/dashboard' element={<TableauViz/>}/>
       <Route path='/set-goals' element={<SetGoals/>}/>
-
+      <Route path="/rank" element={<Ranking/>}/>
+      <Route path="/tableau" element={<TableauEmbed/>}/>
     </Routes>
    </Router>
     </>
