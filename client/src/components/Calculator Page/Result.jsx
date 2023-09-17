@@ -247,13 +247,13 @@ class Result extends Component {
   <p className="font-bold text-xl text-white absolute inset-0 flex justify-center mt-20 ml-12">
     ACCOMMODATIONS
   </p>
-  <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-32">
+  <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-40">
     {this.state.acctrigger
       ? resultArray.ACCOMMODATION.stats
       : resultArray.ACCOMMODATION.recommendation}
   </div> 
   <div className="font-bold text-xl text-white absolute inset-0 justify-center items-center mt-32 ml-12 ">
-  <p>Your Goal : 1000 kg Co2e</p>
+  <p>Your Goal : {localStorage.getItem("restaurant")} kg CO2e</p>
   <p>Actual Emission: {calculatePercentage(this.result.one,this.rest.constantValue)}</p>
   </div>
   <p style={{display:"none"}}>{this.rest.pred = resultArray.ACCOMMODATION.stats}</p>
@@ -262,12 +262,12 @@ class Result extends Component {
         style={{backgroundImage: `url(https://imgs.search.brave.com/9rYM48pV5SVUlvlHNMDhdsUN3I0gpriFbrCQQAhV5r0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9hbWVyaWNhbi1m/YXN0LWZvb2QtaGFt/YnVyZ2Vycy1mcmVu/Y2gtZnJpZXMtaG90/LWRvZ3MtZmFzdC1m/b29kLXVuaGVhbHRo/eS1lYXRpbmctY29u/Y2VwdC10b3Atdmll/d18xMTQ5NDEtMjU0/NS5qcGc_c2l6ZT02/MjYmZXh0PWpwZw)`,backgroundSize: "cover",height: "300px",}}>
       <div className="absolute inset-0 bg-blue-800 opacity-50 rounded-md" style={{background: 'rgb(60, 179, 113)'}}></div>
       <p className="font-bold text-xl text-white absolute inset-0 flex justify-center mt-20 ml-4">FOOD & CLOTHING</p>
-      <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-32">
+      <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-40">
         {this.state.cgtrigger ? resultArray.CONSUMER_GOODS.stats : resultArray.CONSUMER_GOODS.recommendation}
     </div>
     <div className="font-bold text-xl text-white absolute inset-0 justify-center items-center mt-32 ml-12 ">
-    <p>Your Goal : 1000 kg Co2e</p>
-    <p>Actual Emission: {calculatePercentage(this.result.two,this.rest.constantValue)}</p>
+    <p>Your Goal : {localStorage.getItem("food")} kg CO2e</p>
+    <p>Actual Emission: {calculatePercentage(this.result.two,this.rest.constantValue)}</p> <br></br>
     </div>
     <p style={{display:"none"}}>{this.rest.pred = resultArray.CONSUMER_GOODS.stats}</p>
     </div>
@@ -275,7 +275,7 @@ class Result extends Component {
         style={{backgroundImage: `url(https://imgs.search.brave.com/R7-N6Sfop7JVJwUbWOIvwjdm9d5x_O7grHy1o-oN3IQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzIzMzAzODQ3ODUt/Zjk0Yzg0MzUyZTkx/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4TVRC/OGZIUnlZVzV6Y0c5/eWRHRjBhVzl1ZkdW/dWZEQjhmREI4Zkh3/dyZ3PTEwMDAmcT04/MA)`,backgroundSize: "cover",height: "300px",}}>
       <div className="absolute inset-0 bg-blue-800 opacity-50 rounded-md" style={{background: 'rgb(60, 179, 113)'}}></div>
       <p className="font-bold text-xl text-white absolute inset-0 flex justify-center mt-20 ml-4">TRANSPORTATION</p>
-      <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-32">
+      <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-40">
         {this.state.transtrigger ? resultArray.TRANS.stats : resultArray.TRANS.recommendation}
     </div>
     <div className="font-bold text-xl text-white absolute inset-0 justify-center items-center mt-32 ml-12 ">
@@ -288,11 +288,11 @@ class Result extends Component {
         style={{backgroundImage: `url(https://imgs.search.brave.com/RDHOTGqDeFJxMeA50ZilhTylZhjrfGFG0ARPu7L0g3U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA1/NjYyNTEzNi9waG90/by93YXRlci10YXAt/cGhvdG8tZnJvbS1m/aW5sYW5kLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1EcUNf/eGhPdDRlYXNwYUky/YnJlVmdpYkx6dHBJ/V3kxN3VSMVd5cjI1/TFVBPQ)`,backgroundSize: "cover",height: "300px",}}>
       <div className="absolute inset-0 bg-blue-800 opacity-50 rounded-md" style={{background: 'rgb(60, 179, 113)'}}></div>
       <p className="font-bold text-xl text-white absolute inset-0 flex justify-center mt-20 ml-4">UTILITIES</p>
-      <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-32">
+      <div className="font-bold text-xl text-white absolute inset-0 flex justify-center items-center mt-40">
         {this.state.utitrigger ? resultArray.UTILITIES.stats : resultArray.UTILITIES.recommendation}
       </div>
       <div className="font-bold text-xl text-white absolute inset-0 justify-center items-center mt-32 ml-12 ">
-        <h3 className="justify-center items-center">Your Goal : 1000 kg Co2e</h3>
+        <h3 className="justify-center items-center">Your Goal :{localStorage.getItem("utils")} kg CO2e</h3>
         <h3 className="justify-center items-center">Actual Emission: {calculatePercentage(this.result.four,this.rest.constantValue)}</h3>
       </div>
       <p style={{display:"none"}}>{this.rest.pred = resultArray.UTILITIES.stats}</p>
@@ -314,21 +314,21 @@ class Result extends Component {
   </div>
 </div>
 <div className="flex justify-around pt-10">
-      {this.result.final < 3000 && (
+      {this.result.final < 10000 && (
         <Character
           image={ClimateHero}
           title="Yayyyy !! You're a CLIMATE HERO !"
           content="You're making a positive impact on the environment with your sustainable choices."
         />
       )}
-      {this.result.final >= 3000 && this.result.final < 7000 && (
+      {this.result.final >= 10000 && this.result.final < 20000 && (
         <Character
           image={FairEnough}
           title="Hmmmmm... Fair Enough."
           content="You're on the right track, making efforts to reduce your carbon footprint."
         />
       )}
-      {this.result.final >= 7000 && (
+      {this.result.final >= 20000 && (
         <Character
           image={Thug}
           title="You're a CLIMATE THUG"
