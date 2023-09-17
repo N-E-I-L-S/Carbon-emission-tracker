@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import Logo from "../../assets/logo.svg";
+import UserAuth from '../../context/UserAuth';
 
 
 export default function Header(){
@@ -15,18 +17,23 @@ export default function Header(){
         }
         window.addEventListener("scroll",setFixed)
 
-
+        const {user, logout} = UserAuth()
   return (
     <div>
     <header className="fixed w-full z-50">
         <nav className={fix? 'navbar-scrolled': 'border-gray-200'} style={{padding :"1rem"}}>
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-                <a href="#" className="flex items-center">
-                    {/* <img src="img/tailwind-logo.svg" className="h-6 mr-3 sm:h-9" alt="Tailwind Logo" /> */}
-                    <span className="self-center text-xl font-semibold whitespace-nowrap ">Tailwind</span>
+                <a href="/home" className="flex items-center">
+                    <img src={Logo} className="h-40 mr-3 sm:h-9 lg:h-[80px]" alt="Tailwind Logo" />
                 </a>
                 <div className="flex items-center lg:order-2">
-                    <a href="/login" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none dark:focus:ring-green-800">Login</a>
+                    {
+                        user?
+                        <button className='className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 text-white  focus:outline-none dark:focus:ring-green-800' onClick={logout}>Logout</button>
+                        :
+                        <a href="/login" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none dark:focus:ring-green-800">Login</a>
+
+                }
                     <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                         <span className="sr-only">Open main menu</span>
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -42,13 +49,19 @@ export default function Header(){
                             <a href="/calculate" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Calculator</a>
                         </li>
                         <li>
-                            <a href="https://11a1cecbaaa9b99c0f.gradio.live/" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">ChatBot</a>
+                            <a href="https://a7249433b0aebebd75.gradio.live/" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">ChatBot</a>
                         </li>
                         <li>
-                            <a href="/community" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Team</a>
+                            <a href="/forum" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Community</a>
                         </li>
                         <li>
-                            <a href="https://public.tableau.com/views/Technovate/Dashboard1?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Dashboard</a>
+                            <a href="/dashboard">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="https://4cb2fdfb2077849a62.gradio.live/" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Predict</a>
+                        </li>
+                        <li>
+                            <a href="/rank" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Leaderboard</a>
                         </li>
                     </ul>
                 </div>
