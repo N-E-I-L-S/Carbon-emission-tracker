@@ -3,7 +3,8 @@ const router = express.Router()
 const fs = require('fs');
 const mongoose = require('mongoose')
 const axios = require('axios')
-const DataSchema = require("../models/DataSchema")
+const DataSchema = require("../models/DataSchema");
+const UserSchema = require("../models/UserSchema");
 
 router.get('/', function (req, res, next) {
     ImageSchema.find({}).then(function (element) {
@@ -122,6 +123,18 @@ function generateRecommendation(emissionList, unit){
 
 const API_KEY = process.env.APIKEY
 const fetchUrl = 'https://beta3.api.climatiq.io/estimate';
+
+router.post('/api/adduser',function(req,res,next){
+  DataSchema.create(req.body).then(function(element){
+      res.send(element);
+  }).catch(next);
+});
+
+router.get('/api/getalluser', function (req, res, next) {
+  DataSchema.find({}).then(function (element) {
+      res.send(element);
+  }).catch(next);
+});
 
 router.post('/api/calculate-emission', async (req, res) => {
   try {

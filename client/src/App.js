@@ -9,6 +9,9 @@ import ResultPage from './pages/ResultPage';
 import ChatBot from './pages/Chatbot';
 import TableauViz from './pages/Dashboard';
 import SetGoals from './components/Calculator Page/SetGoals';
+import Forum from './pages/Forum';
+import Ranking from './pages/Ranking';
+import Visualize from './pages/Visualize';
 
 function App() {
   return (
