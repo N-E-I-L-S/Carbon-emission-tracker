@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import GoldT from '../assets/gold.png'
 import SilverT from '../assets/silver.png'
 import BronzeT from '../assets/bronze.png'
+import Navbar from "../components/Landing Page/Navbar";
 
 export default function Ranking() {
     const [data, setData] = useState([])
@@ -29,7 +30,8 @@ export default function Ranking() {
     if(!loading)
   return (
     <>
-    <div className="">
+    <Navbar/>
+    <div className="pt-20">
       <div className="flex flex-col p-4 w-[80%] mt-20">
         <div className="flex mt-4">
         <img src={GoldT} alt="" style={{height: "4.5rem", marginRight: "2rem"}} /> 

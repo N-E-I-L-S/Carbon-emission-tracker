@@ -16,6 +16,7 @@ export default function LoginPage() {
             console.log(email);
             setLogged(false);
             setLogged1(true);
+            localStorage.setItem("User", email)
             navigate('/home');
         } catch (err) {
             console.log(err);

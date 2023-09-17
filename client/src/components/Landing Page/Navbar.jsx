@@ -49,7 +49,7 @@ export default function Header(){
                             <a href="/calculate" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Calculator</a>
                         </li>
                         <li>
-                            <a href="https://11a1cecbaaa9b99c0f.gradio.live/" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">ChatBot</a>
+                            <a href="https://a7249433b0aebebd75.gradio.live/" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">ChatBot</a>
                         </li>
                         <li>
                             <a href="/forum" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Community</a>
@@ -58,7 +58,10 @@ export default function Header(){
                             <a href="/dashboard">Dashboard</a>
                         </li>
                         <li>
-                            <a href="https://2cfeedd457669125a2.gradio.live/" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Predict</a>
+                            <a href="https://4cb2fdfb2077849a62.gradio.live/" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Predict</a>
+                        </li>
+                        <li>
+                            <a href="/rank" className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-700 lg:p-0 ">Leaderboard</a>
                         </li>
                     </ul>
                 </div>
